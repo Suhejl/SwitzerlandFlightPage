@@ -26,7 +26,7 @@ var tip = d3
 
 var margin = { top: 0, right: 0, bottom: 0, left: 0 },
   width = 960 - margin.left - margin.right,
-  height = width - margin.top - margin.bottom;
+  height = width ;
 
 // d3.select(window).on('resize', resize);
 
@@ -71,7 +71,8 @@ var path = d3.geoPath();
 
 var graph = document.getElementById('graph');
 var width2 = graph.clientWidth;
-
+height = width2 / 1.5;
+ 
 var svg = d3
   .select("div#graph")
   .append("svg")

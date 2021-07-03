@@ -1,39 +1,29 @@
+AOS.init({
+  offset: 200,
+  delay: 50,
+  once: true
+});
+ 
  getTimes = async (filesPath) => {
-
-  var times = Papa.parse(filesPath, {
-    header: true,
-    download: true,
-    dynamicTyping: true,
-    complete: function (results) {
-      console.log(results);
-      data = results.data;
-      var times2 = [];
-      data.forEach((item) => {
-        
-        times2.push({
-          start: item["start"],
-          end: item["end"],
-        });
-      });
-      return times2;
-    },
-  });
-
-  return times;
-  //   fetch("times.csv")
-  //     .then((response) => response.text())
-  //     .then((v) => Papa.parse(v))
-  //     .then((elements) => {
-  //       var lines = elements.split("\n");
-  //       lines.forEach((item, i) => {
-  //         if (i !== 0) {
-  //           times.push({
-  //             start: item[0],
-  //             end: item[1],
-  //           });
-  //         }
-  //       });
-  //     });
+    return new Promise(resolve => {
+        Papa.parse(filesPath, {
+            header: true,
+            download: true,
+            dynamicTyping: true,
+            complete: function (results) {
+              console.log(results);
+              data = results.data;
+              var times2 = [];
+              data.forEach((item) => {
+                times2.push({
+                  start: item["start"],
+                  end: item["end"],
+                });
+              });
+              resolve(times2)
+            },
+          });
+    });
 }
 
 $(document).ready(function () {
@@ -55,10 +45,10 @@ $(document).ready(function () {
     });
 });
 
-function generateCards(feature) {
+async function  generateCards(feature) {
   const $flights = $("#flights");
 
-  const times = getTimes();
+  const times = await getTimes('times.csv');
 
   times.forEach((element) => {
     const innerHtml = displayFlights(feature, element);
@@ -75,9 +65,9 @@ function generateCards(feature) {
 
 const displayFlights = (feature, time) => {
   return `
-        <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">${time.start}</h4>
+        <div class="card mb-5" data-aos="fade-up">
+                <div class="card-header" >
+                    <h4 class="card-title">${time.start} - ${time.end}</h4>
                 </div>
                 <div class="card-body">
                     <h4 class="card-title"><span style="display: inline-flex;vertical-align: middle;">${feature.properties.name}     <i class="material-icons">arrow_forward</i>     Switzerland</span></h4>
