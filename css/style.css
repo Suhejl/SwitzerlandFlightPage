@@ -27,6 +27,10 @@ p {
   background-image: url('../images/switzerland-header.jpg');
 }
 
+.banner-section.flight {
+  background-image: url('../images/flight.jpg');
+}
+
 .banner-section::after {
   content: "";
   position: absolute;
