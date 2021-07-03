@@ -1,444 +1,422 @@
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>m152-lb02</title>
-    <link rel="shortcut icon" href="https://kubernetes.io/images/favicon.png" />
-    <meta charset="utf-8" content="" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="https://kubernetes.io/images/favicon.png"/>
+    <meta charset="utf-8" content=""/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="css/style.css"/>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these -->
 
     <!-- Latest compiled and minified CSS -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
     />
 
     <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-      crossorigin="anonymous"
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
     ></script>
 
     <!-- Optional theme -->
     <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-      crossorigin="anonymous"
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+            integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+            crossorigin="anonymous"
     />
 
     <!-- Material Kit -->
     <link
-      rel="stylesheet"
-      href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/material-kit.min.css"
+            rel="stylesheet"
+            href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/material-kit.min.css"
     />
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/bootstrap-material-design.min.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/material-kit.min.js"></script>
 
     <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
     />
-  </head>
-  <body>
-    <header
-      class="
+</head>
+<body>
+<header
+        class="
         navbar navbar-transparent navbar-color-on-scroll
         fixed-top
         navbar-expand-lg
       "
-      color-on-scroll="50"
-    >
-      <div class="container">
+        color-on-scroll="50"
+>
+    <div class="container">
         <a
           class="btn btn-rose btn-round"
           href="worldmap.html"
           role="button"
         >
-          <strong>Pick Your Flight</strong>
-          <i class="material-icons">flight</i>
+            <strong>Pick Your Flight</strong>
+            <i class="material-icons">flight</i>
         </a>
-      </div>
-    </header>
+    </div>
+</header>
 
-    <section class="page-header text-center position-relative banner-section">
-      <div class="container">
+<section class="page-header text-center position-relative banner-section">
+    <div class="container">
         <h1 class="title text-outline">Welcome to Switzerland</h1>
         <h3 class="text-outline">
-          One of the most beautiful countries in the world...
+            One of the most beautiful countries in the world...
         </h3>
-      </div>
+    </div>
+</section>
+
+<main class="main main-raised">
+    <section class="section text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10">
+                    <h2 class="title mb-4" data-aos="fade-up">
+                        About Switzerland...
+                    </h2>
+                    <p data-aos="fade-up">
+                        Switzerland, officially the Swiss Confederation, is a landlocked country situated at the
+                        confluence of Western, Central and Southern Europe. It is a federal republic composed of 26
+                        cantons, with federal authorities based in Bern. Switzerland is bordered by Italy to the south,
+                        France to the west, Germany to the north and Austria and Liechtenstein to the east. It is
+                        geographically divided among the Swiss Plateau, the Alps and the Jura, spanning a total area of
+                        41,285 km2 (15,940 sq mi) and land area of 39,997 km2 (15,443 sq mi). Although the Alps occupy
+                        the greater part of the territory, the Swiss population of approximately 8.5 million is
+                        concentrated mostly on the plateau, where the largest cities and economic centres are located,
+                        among them Zürich, Geneva and Basel. These cities are home to several offices of international
+                        organisations such as the WTO, the WHO, the ILO, the headquarters of FIFA, the UN's
+                        second-largest office, as well as the main building of the Bank for International Settlements.
+                        The main international airports of Switzerland are also located in these cities.
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
+    <section class="section text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10">
+                    <h2 class="title mb-4" data-aos="fade-up">Cities to visit...</h2>
+                    <ul
+                            class="nav nav-pills nav-pills-rose justify-content-center mt-5"
+                            role="tablist"
+                    >
+                        <li class="nav-item">
+                            <a
+                                    class="nav-link active"
+                                    id="pills-zurich-tab"
+                                    data-toggle="pill"
+                                    href="#pills-zurich"
+                                    role="tab"
+                                    aria-controls="pills-zurich"
+                                    aria-selected="true"
+                                    data-aos="fade-up"
+                            >Zurich</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                    class="nav-link"
+                                    id="pills-lucerne-tab"
+                                    data-toggle="pill"
+                                    href="#pills-lucerne"
+                                    role="tab"
+                                    aria-controls="pills-lucerne"
+                                    aria-selected="false"
+                                    data-aos="fade-up"
+                                    data-aos-delay="150"
+                            >Lucerne</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                    class="nav-link"
+                                    id="pills-ticino-tab"
+                                    data-toggle="pill"
+                                    href="#pills-ticino"
+                                    role="tab"
+                                    aria-controls="pills-ticino"
+                                    aria-selected="false"
+                                    data-aos="fade-up"
+                                    data-aos-delay="300"
+                            >Ticino</a
+                            >
+                        </li>
+                    </ul>
+                    <div class="tab-content tab-space pb-0">
+                        <div
+                                class="tab-pane active"
+                                id="pills-zurich"
+                                role="tabpanel"
+                                aria-labelledby="pills-zurich-tab"
+                        >
+                            <p data-aos="fade-up">
+                                Zürich is the largest city in Switzerland and the capital of the canton of Zürich. It is
+                                located in north-central Switzerland, at the northwestern tip of Lake Zürich. As of
+                                January 2020, the municipality has 434,335 inhabitants, the urban area (agglomeration)
+                                1.315 million (2009), and the Zürich metropolitan area 1.83 million (2011). Zürich is a
+                                hub for railways, roads, and air traffic. Both Zurich Airport and its main railway
+                                station are the largest and busiest in the country.
+                            </p>
+                            <a
+                                    class="btn btn-round btn-sm mt-4"
+                                    href="https://en.wikipedia.org/wiki/Zurich"
+                                    role="button"
+                                    target="_blank"
+                                    data-aos="fade-up"
+                            >LEARN MORE</a
+                            >
+                        </div>
+                        <div
+                                class="tab-pane"
+                                id="pills-lucerne"
+                                role="tabpanel"
+                                aria-labelledby="pills-lucerne-tab"
+                        >
+                            <p>
+                                Lucerne or Luzern is a city in central Switzerland, in the German-speaking portion of
+                                the country. Lucerne is the capital of the canton of Lucerne and part of the district of
+                                the same name. With a population of approximately 82,000 people, Lucerne is the most
+                                populous city in Central Switzerland, and a nexus of economics, transportation, culture,
+                                and media in the region. The city's urban area consists of 19 municipalities and towns
+                                with an overall population of about 220,000 people.
+                            </p>
+                            <a
+                                    class="btn btn-round btn-sm mt-4"
+                                    href="https://en.wikipedia.org/wiki/Lucerne"
+                                    role="button"
+                                    target="_blank"
+                            >LEARN MORE</a
+                            >
+                        </div>
+                        <div
+                                class="tab-pane"
+                                id="pills-ticino"
+                                role="tabpanel"
+                                aria-labelledby="pills-ticino-tab"
+                        >
+                            <p>
+                                Ticino, sometimes Tessin, officially the Republic and Canton of Ticino or less formally
+                                the Canton of Ticino is one of the 26 cantons forming the Swiss Confederation. It is
+                                composed of eight districts and its capital city is Bellinzona. It is also traditionally
+                                divided into the Sopraceneri and the Sottoceneri, respectively north and south of Monte
+                                Ceneri. Red and blue are the colours of its flag.
+                            </p>
+                            <a
+                                    class="btn btn-round btn-sm mt-4"
+                                    href="https://en.wikipedia.org/wiki/Ticino"
+                                    role="button"
+                                    target="_blank"
+                            >LEARN MORE</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section text-center">
+        <div class="container">
+            <h2 class="title mb-4" data-aos="fade-up">Beautiful places...</h2>
+            <div class="card-columns text-white">
+                <div class="card bg-dark" data-aos="fade-right">
+                    <img
+                            class="card-img"
+                            src="https://images.unsplash.com/photo-1506377585622-bedcbb027afc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+                            alt="Card image"
+                    />
+                    <div
+                            class="
+                  card-img-overlay
+                  d-flex
+                  flex-column
+                  align-items-center
+                  justify-content-center
+                "
+                    >
+                        <h4 class="card-title">Zurich</h4>
+                        <p class="card-text mt-0">Switzerland</p>
+                    </div>
+                </div>
+                <div class="card bg-dark" data-aos="fade-right">
+                    <img
+                            class="card-img"
+                            src="https://www.basel.com/_Resources/Persistent/94ca7665c2103e00ccebb0d666ed103305fa590e/basel-hd-loic-lagarde-2020-13.jpg"
+                            alt="Card image"
+                    />
+                    <div
+                            class="
+                  card-img-overlay
+                  d-flex
+                  flex-column
+                  align-items-center
+                  justify-content-center
+                "
+                    >
+                        <h4 class="card-title">Basel</h4>
+                        <p class="card-text mt-0">Basel</p>
 
-    <main class="main main-raised">
-      <section class="section text-center">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-12 col-md-10">
-              <h2 class="title mb-4" data-aos="fade-up">
-                About Switzerland...
-              </h2>
-              <p data-aos="fade-up">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi
-                quod voluptatum ducimus vero error quasi totam distinctio nam
-                non et quia, deserunt itaque voluptates amet facilis,
-                necessitatibus consequatur facere quam esse! Iste odio esse
-                expedita hic est modi distinctio doloribus id. Unde hic
-                doloribus vel maxime iure tempore, explicabo beatae?
-              </p>
-              <p data-aos="fade-up">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Impedit, quis. Cumque in ad culpa maiores magnam eius voluptas
-                veniam sed. Voluptate nulla nihil laudantium sint doloremque
-                maxime deleniti enim, velit accusamus neque id doloribus dolore
-                nesciunt distinctio optio aliquam nisi temporibus adipisci!
-                Repudiandae, consequatur deleniti autem excepturi recusandae
-                ipsum et.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="section text-center">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-12 col-md-10">
-              <h2 class="title mb-4" data-aos="fade-up">Cities to visit...</h2>
-              <ul
-                class="nav nav-pills nav-pills-rose justify-content-center mt-5"
-                role="tablist"
-              >
-                <li class="nav-item">
-                  <a
-                    class="nav-link active"
-                    id="pills-zurich-tab"
-                    data-toggle="pill"
-                    href="#pills-zurich"
-                    role="tab"
-                    aria-controls="pills-zurich"
-                    aria-selected="true"
-                    data-aos="fade-up"
-                    >Zurich</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    id="pills-lucerne-tab"
-                    data-toggle="pill"
-                    href="#pills-lucerne"
-                    role="tab"
-                    aria-controls="pills-lucerne"
-                    aria-selected="false"
-                    data-aos="fade-up"
-                    data-aos-delay="150"
-                    >Lucerne</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    id="pills-ticino-tab"
-                    data-toggle="pill"
-                    href="#pills-ticino"
-                    role="tab"
-                    aria-controls="pills-ticino"
-                    aria-selected="false"
-                    data-aos="fade-up"
-                    data-aos-delay="300"
-                    >Ticino</a
-                  >
-                </li>
-              </ul>
-              <div class="tab-content tab-space pb-0">
-                <div
-                  class="tab-pane active"
-                  id="pills-zurich"
-                  role="tabpanel"
-                  aria-labelledby="pills-zurich-tab"
-                >
-                  <p data-aos="fade-up">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Necessitatibus voluptatibus a placeat accusantium magnam
-                    numquam ipsum, quis voluptas sint ea tempora officia saepe
-                    asperiores vero iure? Earum quaerat exercitationem
-                    perferendis.
-                  </p>
-                  <p data-aos="fade-up">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Delectus beatae eligendi accusamus voluptatum porro quia,
-                    nisi nam maiores adipisci, incidunt corrupti, corporis
-                    perferendis eos commodi a. Id asperiores dicta nemo in rem
-                    iste ex neque dolor, quae nesciunt, consectetur sit illo vel
-                    ut officiis. Corrupti architecto laborum sed eum
-                    accusantium. Ad quis facere, rerum praesentium similique
-                    quisquam soluta laboriosam quidem voluptas fuga esse. In
-                    quas eum ipsa nobis doloribus ratione!
-                  </p>
-                  <a
-                    class="btn btn-round btn-sm mt-4"
-                    href="https://en.wikipedia.org/wiki/Zurich"
-                    role="button"
-                    target="_blank"
-                    data-aos="fade-up"
-                    >LEARN MORE</a
-                  >
+                    </div>
                 </div>
-                <div
-                  class="tab-pane"
-                  id="pills-lucerne"
-                  role="tabpanel"
-                  aria-labelledby="pills-lucerne-tab"
-                >
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Assumenda commodi sed illum sint rerum. Quis labore cum eius
-                    error esse aspernatur libero! Dolor nisi inventore possimus
-                    voluptas eius dignissimos provident quidem? Deleniti, autem
-                    architecto? Ab dicta animi id accusantium illum tenetur
-                    tempora, pariatur maxime eos odit dignissimos necessitatibus
-                    vero sunt!
-                  </p>
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Non totam nostrum quidem perferendis atque, reprehenderit
-                    maiores adipisci accusamus delectus dolor error itaque ab
-                    iure iste nesciunt. Laudantium, asperiores! Aliquid ullam
-                    consectetur accusantium nostrum dignissimos impedit in quis
-                    recusandae porro ratione.
-                  </p>
-                  <a
-                    class="btn btn-round btn-sm mt-4"
-                    href="https://en.wikipedia.org/wiki/Lucerne"
-                    role="button"
-                    target="_blank"
-                    >LEARN MORE</a
-                  >
+                <div class="card bg-dark" data-aos="fade-right">
+                    <img
+                            class="card-img"
+                            src="https://www.bern.com/assets/images/c/bern-aussicht_c_schweiz-tourismus-eb256f9c.jpg"
+                            alt="Card image"
+                    />
+                    <div
+                            class="
+                  card-img-overlay
+                  d-flex
+                  flex-column
+                  align-items-center
+                  justify-content-center
+                "
+                    >
+                        <h4 class="card-title">Bern, Capital</h4>
+                        <p class="card-text mt-0">Bern</p>
+                    </div>
                 </div>
-                <div
-                  class="tab-pane"
-                  id="pills-ticino"
-                  role="tabpanel"
-                  aria-labelledby="pills-ticino-tab"
-                >
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Non, nam at quam error itaque quo. Omnis officia in placeat
-                    iure! Ex voluptas, at nostrum voluptatem repellendus atque
-                    obcaecati, repellat maiores, cumque accusamus animi
-                    consequatur quam mollitia beatae excepturi dolorum?
-                    Pariatur?
-                  </p>
-                  <a
-                    class="btn btn-round btn-sm mt-4"
-                    href="https://en.wikipedia.org/wiki/Ticino"
-                    role="button"
-                    target="_blank"
-                    >LEARN MORE</a
-                  >
+                <div class="card bg-dark" data-aos="fade-left">
+                    <img
+                            class="card-img"
+                            src="https://www.ascona-locarno.com/.imaging/mte/site-al/1920x1080/dam/site-al/photos/Localita/Ascona-Losone-Arcegno/ascona_lungolago8.jpg/jcr:content/ascona_lungolago8.jpg"
+                            \
+                            alt="Card image"
+                    />
+                    <div
+                            class="
+                  card-img-overlay
+                  d-flex
+                  flex-column
+                  align-items-center
+                  justify-content-center
+                "
+                    >
+                        <h4 class="card-title">Ascona</h4>
+                        <p class="card-text mt-0">Ticino</p>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="section text-center">
-        <div class="container">
-          <h2 class="title mb-4" data-aos="fade-up">Beautiful places...</h2>
-          <div class="card-columns text-white">
-            <div class="card bg-dark" data-aos="fade-right">
-              <img
-                class="card-img"
-                src="https://images.unsplash.com/photo-1506377585622-bedcbb027afc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-                alt="Card image"
-              />
-              <div
-                class="
+                <div class="card bg-dark" data-aos="fade-left">
+                    <img
+                            class="card-img"
+                            src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Kapellbruecke.JPG"
+                            alt="Card image"
+                    />
+                    <div
+                            class="
                   card-img-overlay
                   d-flex
                   flex-column
                   align-items-center
                   justify-content-center
                 "
-              >
-                <h4 class="card-title">Zurich</h4>
-                <p class="card-text mt-0">Switzerland</p>
-              </div>
-            </div>
-            <div class="card bg-dark" data-aos="fade-right">
-              <img
-                class="card-img"
-                src="https://images.unsplash.com/photo-1571936697695-786a86657299?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80"
-                alt="Card image"
-              />
-              <div
-                class="
-                  card-img-overlay
-                  d-flex
-                  flex-column
-                  align-items-center
-                  justify-content-center
-                "
-              >
-                <h4 class="card-title">Switzerland</h4>
-              </div>
-            </div>
-            <div class="card bg-dark" data-aos="fade-right">
-              <img
-                class="card-img"
-                src="https://images.unsplash.com/photo-1551625864-e63ab48154a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=625&q=80"
-                alt="Card image"
-              />
-              <div
-                class="
-                  card-img-overlay
-                  d-flex
-                  flex-column
-                  align-items-center
-                  justify-content-center
-                "
-              >
-                <h4 class="card-title">Bern, Capital</h4>
-              </div>
-            </div>
-            <div class="card bg-dark" data-aos="fade-left">
-              <img
-                class="card-img"
-                src="https://images.unsplash.com/photo-1470478626242-c4f9af4585f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-                alt="Card image"
-              />
-              <div
-                class="
-                  card-img-overlay
-                  d-flex
-                  flex-column
-                  align-items-center
-                  justify-content-center
-                "
-              >
-                <h4 class="card-title">Ticino</h4>
-                <p class="card-text mt-0">Very beautiful</p>
-              </div>
-            </div>
-            <div class="card bg-dark" data-aos="fade-left">
-              <img
-                class="card-img"
-                src="https://images.unsplash.com/photo-1573667575455-0710e2a3d692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-                alt="Card image"
-              />
-              <div
-                class="
-                  card-img-overlay
-                  d-flex
-                  flex-column
-                  align-items-center
-                  justify-content-center
-                "
-              >
-                <h4 class="card-title">Lucerne</h4>
-              </div>
-            </div>
-            <div class="card bg-dark" data-aos="fade-left">
-              <img
-                class="card-img"
-                src="https://images.unsplash.com/photo-1571670954858-176b0731cda5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-                alt="Card image"
-              />
-              <div
-                class="
-                  card-img-overlay
-                  d-flex
-                  flex-column
-                  align-items-center
-                  justify-content-center
-                "
-              >
-                <h4 class="card-title">Not Aargau</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="section pb-5">
-        <div class="container">
-          <h2 class="title text-center mb-4" data-aos="fade-up">
-            Share your Swiss Experience!
-          </h2>
-          <form data-aos="fade-up">
-            <div class="form-row">
-              <div class="col-12 col-md-6 mb-4">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Full Name"
-                />
-              </div>
-              <div class="col col-md-6 mb-4">
-                <input type="email" class="form-control" placeholder="Email" />
-              </div>
-              <div class="col-12 mb-4">
-                <textarea
-                  class="form-control"
-                  rows="5"
-                  placeholder="Message"
-                ></textarea>
-              </div>
-              <div class="col-12 mb-4">
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" value="" />
-                    I agree to share my story
-                    <span class="form-check-sign">
-                      <span class="check"></span>
-                    </span>
-                  </label>
+                    >
+                        <h4 class="card-title">Lucerne</h4>
+                        <p class="card-text mt-0">Lucerne</p>
+                    </div>
                 </div>
-              </div>
-              <div class="col-12 text-right">
-                <button type="submit" class="btn btn-rose">Submit</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </section>
-    </main>
-    <footer class="py-4 page-footer">
-      <div class="container text-center">
-        <div class="row justify-content-between">
-          <div class="col-auto"></div>
-          <div class="col-auto"></div>
-        </div>
-      </div>
-    </footer>
+                <div class="card bg-dark" data-aos="fade-left">
+                    <img
+                            class="card-img"
+                            src="https://www.myswitzerland.com/-/media/dam/resources/places/z/e/zermatt/images%20summer/28415_32001800.jpeg"
+                            alt="Card image"
+                    />
+                    <div
+                            class="
+                  card-img-overlay
+                  d-flex
+                  flex-column
+                  align-items-center
+                  justify-content-center
+                "
+                    >
+                        <h4 class="card-title">Zermatt</h4>
+                        <p class="card-text mt-0">Valais</p>
+                    </div>
+                </div>
+                <div class="card bg-dark" data-aos="fade-right">
+                    <img
+                            class="card-img"
+                            src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Geneve_2005_001_Ork.ch.jpg"
+                            alt="Card image"
+                    />
+                    <div
+                            class="
+                  card-img-overlay
+                  d-flex
+                  flex-column
+                  align-items-center
+                  justify-content-center
+                "
+                    >
+                        <h4 class="card-title">Geneva</h4>
+                        <p class="card-text mt-0">Geneva</p>
+                    </div>
+                </div>
 
-    <button
-      class="
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="py-4 page-footer">
+    <div class="container ">
+        <div class="row justify-content-between text-left">
+            <h3>Impressum</h3>
+            <div class="col-auto">
+                <h4>Namen:</h4>
+                <p class="impressum">Suhejl Asani</p>
+                <p class="impressum">Felix Schneider</p></div>
+            <div class="col-auto">
+
+                <h4>Unternehmen:</h4>
+                <p class="impressum">Technische Berufsschule Zürich</p>
+                <a href="www.tbz.ch">www.tbz.ch</a>
+
+            </div>
+
+        <div class="col-auto">
+            <h4>Kontakt:</h4>
+            <p class="impressum">Telefon: 044 446 96 60</p>
+            <p class="impressum">Email: felix.schneider@edu.tbz.ch</p>
+            <p class="impressum">Email: suhejl.asani@edu.tbz.ch</p>
+        </div>
+    </div>
+    </div>
+</footer>
+
+<button
+        class="
         btn btn-rose btn-fab btn-fab-mini btn-round
         position-fixed
         back-to-top
       "
-      href="#"
-    >
-      <i class="material-icons">keyboard_arrow_up</i>
-    </button>
-    <script type="text/javascript" src="js/index.js"></script>
-  </body>
+        href="#"
+>
+    <i class="material-icons">keyboard_arrow_up</i>
+</button>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
 </html>

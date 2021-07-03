@@ -16,6 +16,10 @@ p {
   margin: 30px 0 0 0;
 }
 
+.impressum {
+  line-height: normal;
+}
+
 .text-outline{
     text-shadow:  1px  1px 1px black,
                     1px -1px 1px black,
