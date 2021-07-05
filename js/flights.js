@@ -33,7 +33,7 @@ $(document).ready(function () {
 
   const id = urlParams.get("id");
 
-  fetch("world_countries.json")
+  fetch("../world_countries.json")
     .then((response) => response.json())
     .then((jsonResponse) => {
       //   console.log(jsonResponse.features)
@@ -48,7 +48,7 @@ $(document).ready(function () {
 async function  generateCards(feature) {
   const $flights = $("#flights");
 
-  const times = await getTimes('times.csv');
+  const times = await getTimes('../times.csv');
 
   times.forEach((element) => {
     const innerHtml = displayFlights(feature, element);

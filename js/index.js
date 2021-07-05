@@ -24,3 +24,9 @@ $backTop.on("click", () => {
   $("html, body").animate({ scrollTop: 0 }, "slow");
   return false;
 });
+
+$(document).ready(() =>{
+  if(window.location.protocol === 'file:'){
+    alert("We are using fetch() to load files. But this doesn't work on local. Please open Project with Live Server in VS Code")
+  }
+})

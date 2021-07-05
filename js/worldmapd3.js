@@ -26,7 +26,7 @@ var tip = d3
 
 var margin = { top: 0, right: 0, bottom: 0, left: 0 },
   width = 960 - margin.left - margin.right,
-  height = width ;
+  height = width;
 
 // d3.select(window).on('resize', resize);
 
@@ -68,39 +68,30 @@ var color = d3
 
 var path = d3.geoPath();
 
-
-var graph = document.getElementById('graph');
+var graph = document.getElementById("graph");
 var width2 = graph.clientWidth;
-height = width2 / 1.5;
- 
+height = width2 / 1.3;
+
 var svg = d3
   .select("div#graph")
   .append("svg")
-  .attr("width", width2)
-  .attr("height", height)
+  .attr("preserveAspectRatio", "xMinYMin meet")
+  .attr("viewBox", "0 0 " + width2 + " " + height)
+  .classed("svg-content-responsive", true)
   .append("g")
   .attr("class", "map");
 
-// var projection = d3.geoMercator().scale(1).translate([0, 0]);
-
-// var projection = d3
-//   .geoMercator()
-//   .scale(150)
-//   .translate([width / 2, height / 1.5]);
-
-// var path = d3.geoPath().projection(projection);
-
-
-
-var projection = d3.geoMercator().scale(width2/10).translate([width2 / 2, width2 / 2]);
+var projection = d3
+  .geoMercator()
+  .scale(width2 / 10)
+  .translate([width2 / 2, width2 / 2]);
 var path = d3.geoPath().projection(projection);
-
 
 svg.call(tip);
 
 d3.queue()
-  .defer(d3.json, "world_countries.json")
-  .defer(d3.tsv, "world_population.tsv")
+  .defer(d3.json, "../world_countries.json")
+  .defer(d3.tsv, "../world_population.tsv")
   .await(ready);
 
 function ready(error, data, population) {
@@ -113,32 +104,7 @@ function ready(error, data, population) {
     d.population = populationById[d.id];
   });
 
-  // using the path determine the bounds of the current map and use
-  // these to determine better values for the scale and translation
-  //   var bounds = path.bounds(data);
-  //   var hscale = (150 * width) / (bounds[1][0] - bounds[0][0]);
-  //   var vscale = (150 * height) / (bounds[1][1] - bounds[0][1]);
-  //   var scale = hscale < vscale ? hscale : vscale;
-  //   var offset = [
-  //     width - (bounds[0][0] + bounds[1][0]) / 2,
-  //     height - (bounds[0][1] + bounds[1][1]) / 2,
-  //   ];
-  //   // new projection
-  //   projection = d3.geoMercator().scale(scale).translate(offset);
-  //   path = path.projection(projection);
-
-  //   var b = path.bounds(data),
-  //     s =
-  //       0.95 /
-  //       Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height),
-  //     t = [
-  //       (width - s * (b[1][0] + b[0][0])) / 2,
-  //       (height - s * (b[1][1] + b[0][1])) / 2,
-  //     ];
-
-  //   // Update the projection to use computed scale & translate.
-  //   projection.scale(s).translate(t);
-  
+  let lastSelectedCountry = undefined;
 
   svg
     .append("g")
@@ -148,7 +114,7 @@ function ready(error, data, population) {
     .enter()
     .append("path")
     .attr("d", path)
-    .style("fill", function(d) {
+    .style("fill", function (d) {
       return color(populationById[d.id]);
     })
     .style("stroke", "white")
@@ -157,7 +123,7 @@ function ready(error, data, population) {
     // tooltips
     .style("stroke", "white")
     .style("stroke-width", 0.3)
-    .on("mouseover", function(d) {
+    .on("mouseover", function (d) {
       tip.show(d, this);
 
       d3.select(this)
@@ -166,36 +132,60 @@ function ready(error, data, population) {
         .style("stroke-width", 3)
         .style("cursor", "pointer");
 
-        // $(this)
+      $(this).on("mouseout", function (d) {
+        tip.hide(d);
+    
+        if (lastSelectedCountry !== this) {
+          d3.select(this)
+            .style("opacity", 0.8)
+            .style("stroke", "white")
+            .style("stroke-width", 0.3);
+        }
+      });
     })
-    .on("mouseout", function(d) {
-      tip.hide(d);
+    .on("click", function (d) {
+      console.log(`clicked ${d.id}`);
+
+      if (lastSelectedCountry) {
+        d3.select(lastSelectedCountry)
+          .style("opacity", 0.8)
+          .style("stroke", "white")
+          .style("stroke-width", 0.3);
+      }
+
+      lastSelectedCountry = this;
+
+      $backTop.removeClass("is-hidden").attr("id", `${d.id}`);
 
       d3.select(this)
-        .style("opacity", 0.8)
+        .style("opacity", 1)
         .style("stroke", "white")
-        .style("stroke-width", 0.3);
-    })
-    .on("click", function(d) {
-        console.log(`clicked ${d.id}`);    
-        
-        $backTop
-        .removeClass('is-hidden')
-        .attr("id", `${d.id}`);
+        .style("stroke-width", 3)
+        .style("cursor", "pointer");
+
+      $(this).on("mouseout", function (d) {
+        tip.hide(d);
+
+        d3.select(this)
+          .style("opacity", 1)
+          .style("stroke", "white")
+          .style("stroke-width", 3)
+          .style("cursor", "pointer");
+      });
     });
 
-  svg
-    .append("path")
-    .datum(
-      topojson.mesh(data.features, function (a, b) {
-        return a.id !== b.id;
-      })
-    )
-    // .datum(topojson.mesh(data.features, function(a, b) { return a !== b; }))
-    .attr("class", "names")
-    .attr("d", path);
+  // svg
+  //   .append("path")
+  //   .datum(
+  //     topojson.mesh(data.features, function (a, b) {
+  //       return a.id !== b.id;
+  //     })
+  //   )
+  //   // .datum(topojson.mesh(data.features, function(a, b) { return a !== b; }))
+  //   .attr("class", "names")
+  //   .attr("d", path);
 }
 
-$backTop.on("click", (e) =>{
-    this.location.href = `flights.html?id=${e.delegateTarget.id}`
-})
+$backTop.on("click", (e) => {
+  this.location.href = `flights.html?id=${e.delegateTarget.id}`;
+});
